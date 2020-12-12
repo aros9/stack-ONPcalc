@@ -1,0 +1,6 @@
+﻿  calculator.c
+  main.c
+  Generating Code...
+C:\Users\kkowa\OneDrive\Dokumenty\GitHub\stack-ONPcalc\stack-ONPcalc\stack-ONPcalc\calculator.c(24): warning C4716: 'multiply': must return a value
+C:\Users\kkowa\OneDrive\Dokumenty\GitHub\stack-ONPcalc\stack-ONPcalc\stack-ONPcalc\calculator.c(29): warning C4716: 'divide': must return a value
+  stack-ONPcalc.vcxproj -> C:\Users\kkowa\OneDrive\Dokumenty\GitHub\stack-ONPcalc\stack-ONPcalc\Debug\stack-ONPcalc.exe
