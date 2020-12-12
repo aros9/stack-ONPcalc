@@ -16,9 +16,9 @@ struct stack
 typedef struct stack stack;
 
 
-void push();
-void pop();
-int empty();
-void clear();
-void display();
+void push(stack** top, complex new);
+void pop(stack** top);
+void empty(stack* top);
+void clear(stack** top);
+void display(stack* top);
 
