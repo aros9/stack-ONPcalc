@@ -1,13 +1,71 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
+#include <windows.h>
 #include "calculator.h"
 
 int main()
 {
-    stack* top;
-    top = NULL;
+    stack* top; // wskaznik na gore stosu
+    top = NULL; // na poczatu wskazuje na NULL - nie ma zadnych elementow na stosie
 
-    complex number;
+    complex number; // numer czytany z konsoli
+    /*
+    char operator; // zmienna wczytana z konsoli okreslajaca rodzaj dzialania na liczbach ze stosu
+
+    for (;;)
+    {
+        number.imaginary = 0; // zerowanie czesci urojonej liczby zespolonej w razie gdyby uzytkownik nie podal takiej wartosci
+        operator = '0'; // "zerowanie" operatora
+        system("cls");
+        printf("======STOS======\n");
+        display(top); // wyswietl stos
+        printf("================\n");
+        printf("KALKULATOR ONP\n");
+
+
+        while (operator == '0')
+        {
+            scanf("%lf %lf %c", &number.real, &number.imaginary, &operator);
+            push(&top, number);
+        }
+
+        if (top->previous == NULL) operator = '0'; // jezeli zostala podana tylko jedna liczba i znak dzialania
+
+        switch (operator)
+        {
+        case '+': // dodawanie dwoch liczb z gory stosu
+        {
+            top->previous->number = add(top->previous->number, top->number);
+            pop(&top);
+        }
+            break;
+        case '-': // odejmowanie dwoch liczb z gory stosu
+        {
+            top->previous->number = subtract(top->previous->number, top->number);
+            pop(&top);
+        }
+            break;
+        case '*': // mnozenie dwoch liczb z gory stosu
+        {
+            top->previous->number = multiply(top->previous->number, top->number);
+            pop(&top);
+        }
+            break;
+        case '/': // dzielenie dwoch liczb z gory stosu
+        {
+            top->previous->number = divide(top->number, top->previous->number);
+            pop(&top);
+        }
+            break;
+        default:
+            break;
+        }
+
+    }
+    */
+    
+
 
     int choice;
 
@@ -37,10 +95,11 @@ int main()
             pop(&top);
             break;
         case 3:
-            empty(top);
+            empty(top); Sleep(2000);
             break;
         case 4:
-            clear(top);
+            clear(&top);
+            break;
         default:
         {
             printf("Zakonczenie programu!\n");
@@ -50,7 +109,7 @@ int main()
         }
 
     }
-
+    
 
     return 0;
 }

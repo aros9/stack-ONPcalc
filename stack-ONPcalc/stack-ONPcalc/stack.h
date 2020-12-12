@@ -1,24 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct complex
+typedef struct complex // struktura liczby zespolonej
 {
 	double real;
 	double imaginary;
-};
-typedef struct complex complex;
+}complex;
 
-struct stack
+typedef struct stack // struktura stosu
 {
 	complex number;
 	struct stack *previous;
-}; 
-typedef struct stack stack;
+}stack;
 
-
-void push(stack** top, complex new);
-void pop(stack** top);
-void empty(stack* top);
-void clear(stack** top);
-void display(stack* top);
-
+void push(stack** top, complex new); // poloz element na stosie
+void pop(stack** top); // zdejmij element ze stosu
+void empty(stack* top); // czy stos jest pusty?
+void clear(stack** top); // wyczysc stos
+void display(stack* top); // wyswietl stos

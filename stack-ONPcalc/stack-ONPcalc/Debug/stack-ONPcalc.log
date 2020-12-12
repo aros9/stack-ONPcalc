@@ -1,4 +1,2 @@
 ﻿  main.c
-C:\Users\kkowa\Documents\GitHub\stack-ONPcalc\stack-ONPcalc\stack-ONPcalc\main.c(43,22): warning C4047: "funkcja": "stack **" różni się w poziomach operatorów pośrednich od "stack *"
-C:\Users\kkowa\Documents\GitHub\stack-ONPcalc\stack-ONPcalc\stack-ONPcalc\main.c(43,19): warning C4024: "clear": różne typy dla formalnego i rzeczywistego parametru 1
-  stack-ONPcalc.vcxproj -> C:\Users\kkowa\Documents\GitHub\stack-ONPcalc\stack-ONPcalc\Debug\stack-ONPcalc.exe
+  stack-ONPcalc.vcxproj -> C:\Users\kkowa\OneDrive\Dokumenty\GitHub\stack-ONPcalc\stack-ONPcalc\Debug\stack-ONPcalc.exe
