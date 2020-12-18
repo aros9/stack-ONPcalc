@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "calculator.h"
+// istnieje tez biblioteka complex.h, ktora umozliwia uzycie gotowych dzialan na liczbach zespolonych, ale wolalem napisac je "recznie" w ramach projektu
 
 complex add(complex a,complex b) // dodawanie liczb zespolonych
 {
@@ -31,9 +32,9 @@ complex divide(complex a, complex b) // dzielenie liczb zespolonych
 	complex result;
 	if ((a.imaginary == 0) && (b.imaginary == 0)) // w przypadku, gdy obie liczby nie maja czesci urojonej, mozna je potraktowac jako liczby rzeczywiste
 	{
-		result.real = a.real / b.real;
-		result.imaginary = 0;
-		return result;
+			result.real = a.real / b.real;
+			result.imaginary = 0;
+			return result;
 	}
 	else
 	{

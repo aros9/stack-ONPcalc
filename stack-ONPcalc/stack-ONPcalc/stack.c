@@ -34,7 +34,7 @@ void pop(stack** top)
 
 void empty(stack* top)
 {
-	(top == NULL) ? printf("Stos jest pusty!\n") : printf("Stos nie jest pusty!\n"); // jezeli wskaznik top jest NULL to wykonaj pierwsza instrukcje, w przeciwnym wypadku druga
+	printf((top == NULL) ? "Stos jest pusty!\n" : "Stos nie jest pusty!\n"); // jezeli wskaznik top jest NULL to printf pierwsza instrukcje, w przeciwnym wypadku druga
 }
 
 void clear(stack** top)
@@ -47,14 +47,13 @@ void clear(stack** top)
 
 void display(stack* top)
 {
-	printf("\n");
 	if (top == NULL) printf("Stos jest pusty!\n"); // warunek kiedy wskaznik top jest ustawiony na NULL
 	else
 	{
 		stack* temp = top; // tymczasowy wskaznik na gorny element
 		do
 		{
-			printf("%.3lf + %.3lfi\n", temp->number.real, temp->number.imaginary); // wyswietl liczby na ktore wskazuje tymczasowy wskaznik
+			printf("%lf + %lfi\n", temp->number.real, temp->number.imaginary); // wyswietl liczby na ktore wskazuje tymczasowy wskaznik
 			temp = temp->previous; // zmiana wskaznika na wartosc poprzednia
 		} while (temp != NULL); // dopoki tymczasowy wskaznik nie bedzie wskazywal na NULL, czyli do ostatniego elementu
 	}
