@@ -8,14 +8,16 @@ int main()
 {
     stack* top; // wskaznik na gore stosu
     top = NULL; // na poczatu wskazuje na NULL - nie ma zadnych elementow na stosie
-    int choice;
+    int choice, i;
     complex number; // numer czytany z konsoli
+
+    int c;
 
     char operator; // zmienna wczytana z konsoli okreslajaca rodzaj dzialania na liczbach ze stosu
     char tab[50]; // bufor potrzebny do odczytu z konsoli za pomoca funkcji fgets
     for (;;)
     {
-        // i = 0;
+        i = 0;
         operator = '0'; // "zerowanie" operatora
         system("cls");
         printf("======STOS======\n");
@@ -33,7 +35,6 @@ int main()
         while (scanf("%d", &choice) != 1 || (choice < 1 || choice > 5))
         {
             printf("Niepoprawna wartosc!\n");
-            int c;
             while ((c = getchar()) != '\n' && c != EOF);
         }
 
@@ -43,22 +44,33 @@ int main()
         {
             printf("Wpisz element ktory chcesz dodac na stos: ");
             number.imaginary = 0; // zerowanie czesci urojonej liczby zespolonej w razie gdyby uzytkownik nie podal takiej wartosci
+
             getchar();// getchar uzywany do czyszczenia bufora po wczytywaniu z konsoli wartosci "choice"
             fgets(tab, 50, stdin);
-            if (sscanf(tab, "%lf %lf", &number.real, &number.imaginary) != 0)
+
+            if ((c = sscanf(tab, "%lf %lf", &number.real, &number.imaginary)) != 0 && c != EOF )
             {
                 push(&top, number);
             }
             else
             {
-                sscanf(tab, "%c", &operator);
-                printf("Operatorando: %c\n", operator);
-                Sleep(2000);
-            }
-
-            if (top == NULL || top->previous == NULL) // jezeli jest za malo liczb do dzialania
-            {
-                operator = '0';
+                if (top == NULL || top->previous == NULL) // jezeli jest za malo liczb do dzialania
+                {
+                    operator = '0';
+                    printf("Za malo liczb do dzialania!\n");
+                    Sleep(2000);
+                }
+                else
+                {
+                    sscanf(tab, "%c", &operator);
+                    while (operator == ' ')
+                    {
+                        operator = tab[i];
+                        i++;
+                    }
+                    printf("Operacja: '%c'\n", operator);
+                    Sleep(2000);
+                }
             }
 
             switch (operator)
