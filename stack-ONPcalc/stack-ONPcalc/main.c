@@ -8,13 +8,14 @@ int main()
 {
     stack* top; // wskaznik na gore stosu
     top = NULL; // na poczatu wskazuje na NULL - nie ma zadnych elementow na stosie
-    int choice, i;
+    int choice, i; // wybor, zmienna do poprawnego czytania znaku operacji z konsoli
     complex number; // numer czytany z konsoli
 
     int c;
 
     char operator; // zmienna wczytana z konsoli okreslajaca rodzaj dzialania na liczbach ze stosu
     char tab[50]; // bufor potrzebny do odczytu z konsoli za pomoca funkcji fgets
+
     for (;;)
     {
         i = 0;
@@ -68,8 +69,16 @@ int main()
                         operator = tab[i];
                         i++;
                     }
-                    printf("Operacja: '%c'\n", operator);
-                    Sleep(2000);
+                    if (operator == '+' || operator == '-' || operator == '*' || operator == '/')
+                    {
+                        printf("Operacja: '%c'\n", operator);
+                        Sleep(2000);
+                    }
+                    else
+                    {
+                        printf("Niepoprawna operacja!\n");
+                        Sleep(2000);
+                    }
                 }
             }
 
